@@ -28,7 +28,7 @@ public class OperationController {
         List<Operation> operations = operationService.findOperations();
 
         return ResponseEntity.ok(operations.stream()
-                .map(DefaultMapper.INSTANCE::toResponseOperation)
+                .map(ApiMapper.INSTANCE::toResponseOperation)
                 .collect(Collectors.toList()));
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import javax.persistence.EntityNotFoundException;
 
 @ControllerAdvice
-public class DefaultExceptionHandler {
+public class ApiExceptionHandler {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

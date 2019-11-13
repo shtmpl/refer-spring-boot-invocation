@@ -6,9 +6,9 @@ import refer.spring.boot.operation.controller.api.response.ResponseOperation;
 import refer.spring.boot.operation.domain.Operation;
 
 @Mapper
-public interface DefaultMapper {
+public interface ApiMapper {
 
-    DefaultMapper INSTANCE = Mappers.getMapper(DefaultMapper.class);
+    ApiMapper INSTANCE = Mappers.getMapper(ApiMapper.class);
 
     ResponseOperation toResponseOperation(Operation operation);
 }
