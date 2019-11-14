@@ -1,4 +1,4 @@
-package refer.spring.boot.operation.controller.api;
+package refer.spring.boot.invocation.controller.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import refer.spring.boot.operation.controller.api.request.RequestEvaluation;
-import refer.spring.boot.operation.domain.EvaluationException;
-import refer.spring.boot.operation.domain.Operation;
-import refer.spring.boot.operation.service.EvaluationService;
+import refer.spring.boot.invocation.controller.api.request.RequestEvaluation;
+import refer.spring.boot.invocation.domain.Invocation;
+import refer.spring.boot.invocation.service.EvaluationService;
 
 import javax.validation.Valid;
 
@@ -41,10 +40,10 @@ public class EvaluationController {
         return ResponseEntity.ok(result);
     }
 
-    private ResponseEntity<Operation> evaluateAsync(RequestEvaluation request) {
+    private ResponseEntity<Invocation> evaluateAsync(RequestEvaluation request) {
         Long first = request.getFirst();
         Long other = request.getOther();
-        Operation result = evaluationService.evaluateAsync(first, other);
+        Invocation result = evaluationService.evaluateAsync(first, other);
 
         return ResponseEntity.ok(result);
     }

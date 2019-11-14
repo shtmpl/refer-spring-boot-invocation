@@ -1,10 +1,15 @@
-package refer.spring.boot.operation.controller.api.response;
+package refer.spring.boot.invocation.domain;
 
-import refer.spring.boot.operation.domain.Operation;
-
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.OffsetDateTime;
 
-public class ResponseOperation {
+@Entity
+public class Invocation {
 
     public enum Outcome {
 
@@ -12,6 +17,8 @@ public class ResponseOperation {
         FAILURE
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private OffsetDateTime createdAt;
@@ -20,7 +27,8 @@ public class ResponseOperation {
 
     private OffsetDateTime completedAt;
 
-    private Operation.Outcome outcome;
+    @Enumerated(EnumType.STRING)
+    private Outcome outcome;
 
     private String reason;
 
@@ -56,11 +64,11 @@ public class ResponseOperation {
         this.completedAt = completedAt;
     }
 
-    public Operation.Outcome getOutcome() {
+    public Outcome getOutcome() {
         return outcome;
     }
 
-    public void setOutcome(Operation.Outcome outcome) {
+    public void setOutcome(Outcome outcome) {
         this.outcome = outcome;
     }
 

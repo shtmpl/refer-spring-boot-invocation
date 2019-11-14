@@ -1,4 +1,4 @@
-package refer.spring.boot.operation;
+package refer.spring.boot.invocation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

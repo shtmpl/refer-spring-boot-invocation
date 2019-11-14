@@ -1,4 +1,4 @@
-package refer.spring.boot.operation.domain;
+package refer.spring.boot.invocation.domain;
 
 public class EvaluationException extends RuntimeException {
 
